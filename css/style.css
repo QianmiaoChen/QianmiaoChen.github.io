@@ -156,3 +156,5 @@ details > summary:hover { text-decoration: underline; text-underline-offset: 3px
   details > * { display: block; }
   body { background: #fff; }
 }
+
+.subhead { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); margin: 10px 0 18px; }
