@@ -1,0 +1,158 @@
+/* Qianmiao (Michelle) Chen — personal website
+   Fonts: Source Serif 4 and EB Garamond (SIL Open Font License), hosted in /fonts */
+
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 400; font-display: swap;
+  src: url("../fonts/source-serif-4-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 400; font-display: swap;
+  src: url("../fonts/source-serif-4-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 600; font-display: swap;
+  src: url("../fonts/source-serif-4-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 600; font-display: swap;
+  src: url("../fonts/source-serif-4-latin-600-italic.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: normal; font-weight: 500; font-display: swap;
+  src: url("../fonts/eb-garamond-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "EB Garamond"; font-style: italic; font-weight: 500; font-display: swap;
+  src: url("../fonts/eb-garamond-latin-500-italic.woff2") format("woff2"); }
+
+:root {
+  --ink: #1f2328;          /* main text */
+  --muted: #5f6670;        /* secondary text */
+  --faint: #8a9099;        /* small labels */
+  --rule: #e3e1dc;         /* thin lines */
+  --accent: #1d3a5f;       /* deep navy: links, name */
+  --accent-soft: #eef2f7;  /* light tint for hover */
+  --paper: #fdfcfa;        /* page background */
+  --body: "Source Serif 4", "Iowan Old Style", Georgia, "Noto Serif CJK SC", "Songti SC", serif;
+  --display: "EB Garamond", "Garamond", Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  font-feature-settings: "kern", "liga", "onum";
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(29, 58, 95, 0.25); transition: border-color .15s, background-color .15s; }
+a:hover { border-bottom-color: var(--accent); }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+/* ---------- header ---------- */
+.site-header { border-bottom: 1px solid var(--rule); }
+.site-header .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding-top: 26px; padding-bottom: 18px; flex-wrap: wrap; }
+.site-name { font-family: var(--display); font-weight: 500; font-size: 24px; letter-spacing: .01em; color: var(--ink); border: 0; }
+.site-name:hover { color: var(--accent); }
+.site-nav { display: flex; gap: 26px; flex-wrap: wrap; }
+.site-nav a { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); border: 0; padding-bottom: 3px; border-bottom: 1px solid transparent; }
+.site-nav a:hover { color: var(--accent); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--ink); }
+
+main { padding: 56px 0 72px; }
+
+/* ---------- headings ---------- */
+h1, h2, h3 { font-family: var(--display); font-weight: 500; color: var(--ink); line-height: 1.2; }
+h1 { font-size: 44px; margin: 0 0 6px; letter-spacing: -.005em; }
+.page-title { font-size: 40px; margin: 0 0 8px; }
+.page-lede { color: var(--muted); margin: 0 0 40px; font-size: 17px; }
+h2 { font-size: 15px; font-family: var(--body); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent);
+  margin: 52px 0 22px; padding-bottom: 10px; border-bottom: 1px solid var(--rule); }
+h2:first-child { margin-top: 0; }
+
+/* ---------- home ---------- */
+.intro { display: grid; grid-template-columns: 220px 1fr; gap: 44px; align-items: start; }
+.portrait { width: 220px; height: auto; display: block; border-radius: 2px; filter: saturate(.95); }
+.role { font-size: 18px; color: var(--muted); margin: 0 0 22px; }
+.role strong { color: var(--ink); font-weight: 600; }
+.bio p { margin: 0 0 14px; }
+.links { list-style: none; padding: 0; margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 15px; }
+.links a { border-bottom-color: transparent; }
+.links a:hover { border-bottom-color: var(--accent); }
+.links .sep { color: var(--rule); }
+
+.fields { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.fields li { font-size: 14.5px; color: var(--ink); background: #f3f1ec; border-radius: 2px; padding: 3px 11px; }
+
+.edu { list-style: none; margin: 0; padding: 0; }
+.edu li { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 7px 0; }
+.edu .degree { font-weight: 600; }
+.edu .school { color: var(--muted); }
+.edu .year { color: var(--faint); font-variant-numeric: tabular-nums; }
+
+.featured { margin: 0; }
+
+/* ---------- papers ---------- */
+.papers { list-style: none; margin: 0; padding: 0; }
+.paper { padding: 0 0 26px; }
+.paper + .paper { padding-top: 0; }
+.paper-title { font-weight: 600; font-size: 17.5px; line-height: 1.4; color: var(--ink); }
+a.paper-title { color: var(--ink); border-bottom: 1px solid var(--rule); }
+a.paper-title:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.paper-meta { color: var(--muted); font-size: 15.5px; margin-top: 3px; }
+.paper-meta em { color: var(--ink); }
+.status { font-style: italic; color: var(--muted); }
+.paper-actions { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 14px; align-items: baseline; }
+.paper-actions a { border-bottom-color: transparent; letter-spacing: .02em; }
+.paper-actions a:hover { border-bottom-color: var(--accent); }
+
+details { margin: 0; }
+details > summary { list-style: none; cursor: pointer; color: var(--accent); font-size: 14px; letter-spacing: .02em; display: inline; }
+details > summary::-webkit-details-marker { display: none; }
+details > summary::after { content: " +"; color: var(--faint); }
+details[open] > summary::after { content: " –"; }
+details > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
+.abstract { margin: 10px 0 4px; padding: 2px 0 2px 18px; border-left: 2px solid var(--rule); color: #3b4148; font-size: 15.5px; line-height: 1.65; }
+.paper-actions details[open] { flex-basis: 100%; order: 10; }
+
+.wip li { padding: 0 0 12px; }
+.wip .paper-title { font-weight: 400; }
+
+.pubs .paper-title { font-weight: 400; }
+
+/* ---------- teaching ---------- */
+.course { padding: 0 0 22px; }
+.course-head { display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: baseline; }
+.course-name { font-weight: 600; }
+.course-term { color: var(--faint); font-size: 15px; white-space: nowrap; }
+.course-meta { color: var(--muted); font-size: 15.5px; }
+.school-label { font-family: var(--display); font-size: 21px; margin: 6px 0 14px; color: var(--ink); }
+
+.note { color: var(--muted); }
+
+.cv-box { border: 1px solid var(--rule); padding: 28px 30px; background: #fff; }
+.button { display: inline-block; font-family: var(--body); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; color: #fff; background: var(--accent); border: 0; padding: 11px 20px; border-radius: 2px; }
+.button:hover { background: #142a46; border: 0; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--rule); color: var(--faint); font-size: 13.5px; }
+.site-footer .wrap { padding-top: 22px; padding-bottom: 34px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.site-footer a { color: var(--muted); border-bottom-color: transparent; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 720px) {
+  body { font-size: 16.5px; }
+  .wrap { padding: 0 20px; }
+  .site-header .wrap { flex-direction: column; gap: 10px; padding-top: 20px; padding-bottom: 14px; }
+  .site-nav { gap: 18px; }
+  main { padding: 36px 0 56px; }
+  .intro { grid-template-columns: 1fr; gap: 26px; }
+  .portrait { width: 150px; }
+  h1 { font-size: 36px; }
+  .page-title { font-size: 34px; }
+  .edu li, .course-head { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media print {
+  .site-header, .site-footer { display: none; }
+  details > * { display: block; }
+  body { background: #fff; }
+}
